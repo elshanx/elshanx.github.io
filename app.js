@@ -1,15 +1,25 @@
-function typeWriter() {
+(function yummy() {
+  const container = document.querySelector('.container');
   const place = document.querySelector('.container__title');
-  let text = `Maybe try again later?`;
-  const textInner = ``;
+  const secondPlace = document.querySelector('.container__title--2');
+  let isTyping = true;
   let i = 0;
+  let x = 0;
 
   setInterval(() => {
-    place.innerText = '';
+    place.innerHTML += `Whoops..`.charAt(i);
+    i++;
+  }, 80);
+
+  setTimeout(() => {
+    isTyping = false;
+    !isTyping && container.removeChild(place);
+  }, 2500);
+
+  setTimeout(() => {
     setInterval(() => {
-      place.innerHTML += text.charAt(i);
-      i++;
+      secondPlace.innerHTML += `Maybe try again later?`.charAt(x);
+      x++;
     }, 50);
-  }, 2000);
-}
-typeWriter();
+  }, 3000);
+})();
