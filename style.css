@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
-
+*,
 *::before,
 *::after {
   margin: 0;
@@ -19,6 +19,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #aaa;
 }
 
 .container {
@@ -28,5 +29,11 @@ body {
 .container__title,
 .container__title--2 {
   font-size: 10rem;
-  color: #aaa;
+}
+
+@media (max-width: 700px) {
+  .container__title,
+  .container__title--2 {
+    font-size: 6rem;
+  }
 }
